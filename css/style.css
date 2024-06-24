@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#title {
+    border-bottom: 1px solid orange;
+    text-align: center;
+    font-family: 'Pixel';
+    height: 70px;
+
+}
+
+#title h1 {
+    position: relative;
+    font-size: 2.0rem;
+    top: 30px;
+    color: orange;
+}
+
+
+.game-board { 
+    width: 100%;
+    height: 500px;
+    border-bottom: 1px solid orange;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #e0f6ff);
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 10%;
+    animation: pipe-animation 1.5s infinite linear;    
+} 
+
+.dino {
+    width: 20%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jump {
+    animation: jump-animation 700ms ease-out;  
+} 
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear; 
+}
+
+
+.tips {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 2.3rem;
+    color: orange;
+    font-weight: bolder;
+}
+
+.advice {
+    text-align: center;
+    padding-top: 20px;
+    color: red;
+    font-weight: bolder;
+}
+
+.score-table {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.score {
+    font-family: 'Pixel';
+    font-size: 3.0rem;
+    color: orangered;
+    position: absolute;
+    top: 1.5%;
+    right: 1.5%;
+    z-index: 1;
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url(../fonts/Pixel.ttf);   /* adicionando fonte ao score */
+}
+
+
+/* Animação tubo */
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    
+    to {
+        right: 100%;
+    }
+}
+
+/* Animação dino */
+@keyframes jump-animation {
+    
+    0% {
+       bottom: 0; 
+    }
+
+    40%  {
+        bottom: 150px;
+    }
+
+    60% {
+        bottom: 150px;
+    }
+
+    100% {
+        bottom: 0px;
+    }
+}
+
+/* Animação nuvens */
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
